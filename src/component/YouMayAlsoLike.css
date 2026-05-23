@@ -1,0 +1,119 @@
+.youMayAlsoLike {
+  padding: 50px 250px; /* desktop spacing */
+  text-align: left;    
+}
+
+/* Large Desktop <= 1440px */
+@media (max-width: 1440px) {
+  .youMayAlsoLike {
+    padding: 50px 150px;
+  }
+}
+
+/* Laptop <= 1280px */
+@media (max-width: 1280px) {
+  .youMayAlsoLike {
+    padding: 45px 80px;
+  }
+
+  .cardCarItem {
+    width: calc(25% - 15px); /* 4 items per row */
+  }
+}
+
+.youMayAlsoLike .title h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.cardCar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; 
+}
+
+.cardCarItem {
+  width: calc(16.66% - 16px); /* 6 items per row on desktop */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  text-align: center;
+}
+
+.cardCarItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cardCarImg {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.cardCarItem h4 {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  color: #2c2c2c;
+}
+
+.cardCarItem p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ===== Responsive: <=1024px ===== */
+@media (max-width: 1024px) {
+  .youMayAlsoLike {
+    padding: 40px 40px; 
+  }
+
+  .cardCarItem {
+    width: calc(33.33% - 13px); /* 3 items per row */
+  }
+}
+
+/* ===== Responsive: <=820px ===== */
+@media (max-width: 820px) {
+  .cardCarItem {
+    width: calc(50% - 10px); /* 2 items per row */
+  }
+}
+
+/* ===== Responsive: <=768px ===== */
+@media (max-width: 768px) {
+  .youMayAlsoLike {
+    padding: 30px 20px; 
+  }
+
+  .cardCarImg {
+    height: 120px;
+  }
+
+  .cardCarItem h4 {
+    font-size: 1rem;
+  }
+
+  .cardCarItem p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== Extra Small Mobile <=480px ===== */
+@media (max-width: 480px) {
+  .cardCarItem {
+    width: 100%; /* 1 item per row */
+  }
+
+  .cardCarImg {
+    height: 100px;
+  }
+}

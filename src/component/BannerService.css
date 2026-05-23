@@ -1,0 +1,130 @@
+.CoverCar {
+  margin: auto;
+  /* تدرج أسود + الصورة */
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('../assets/background1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+   
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.CoverCar h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 48px;
+  color: #4c4c4c;
+}
+
+/* ================= Row of Items ================= */
+.itemsRow {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ================= Single Item ================= */
+.itemNumber {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  width: 300px; /* حجم البطاقة */
+  flex-shrink: 0;
+  transition: transform 0.3s ease; /* لإضافة تحريك عند hover كامل البطاقة */
+}
+
+.itemNumber:hover {
+  transform: translateY(-8px); /* يرفع البطاقة كاملة */
+}
+
+/* ================= Number 3D ================= */
+.number3D {
+  font-size: 96px;
+  font-weight: 900;
+  color: #2c2c2c;
+  text-shadow:
+    1px 1px 0 #000,
+    2px 2px 0 #000,
+    3px 3px 0 #000,
+    6px 6px 12px rgba(0, 0, 0, 0.6);
+  margin-right: -10px; /* المسافة بين الرقم والصورة */
+  flex-shrink: 0;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* عند hover على البطاقة، الرقم يكبر ويطفو */
+
+
+/* ================= Image Wrapper ================= */
+.imageWrapper {
+  position: relative;
+  flex: 1;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* ================= Label on Image ================= */
+.labelOnImage {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #707070;
+  font-weight: 600;
+  font-size: 16px;
+  background: rgba(0,0,0,0.5);
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 1024px) {
+  .number3D {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .itemsRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px; /* زيادة المسافة بين البطاقات العمودية */
+  }
+
+  .itemNumber {
+    flex-direction: column; /* الرقم فوق الصورة */
+    align-items: center;
+    width: 90%; /* لتكون البطاقة أوسع قليلاً على الموبايل */
+  }
+
+  .number3D {
+    font-size: 60px;
+    margin-right: 0; /* إزالة الهامش الأيمن */
+    margin-bottom: 16px; /* المسافة بين الرقم والصورة */
+    transform: none; /* إزالة أي transform غير مرغوب */
+  }
+
+  .imageWrapper img {
+    height: 220px;
+  }
+
+  .labelOnImage {
+    font-size: 14px;
+  }
+}

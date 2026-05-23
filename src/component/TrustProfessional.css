@@ -1,0 +1,152 @@
+/* ================== BASE ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.TrustPro {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px 40px;
+}
+
+.desc {
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* ================== MAIN LAYOUT ================== */
+.ContainerFirstPart {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.LeftSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.RightSideTrust {
+    flex: 1;
+    width: 100%;
+}
+
+/* ================== TEXT ================== */
+.textTurst h1 {
+    font-weight: 800;
+    max-width: 400px;
+    font-size: 32px;
+}
+
+.textTurst h4 {
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+.textTurst p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ================== BUTTON ================== */
+.textTurst button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #2c2c2c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+    margin-right: 10px;
+}
+
+/* ================== CARD ================== */
+.cartItemAboutUS {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #2c2c2c;
+    padding: 15px 25px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.RightSideicon i {
+    font-size: 26px;
+    color: white;
+}
+
+.leftsideText h2,
+.leftsideText p,
+.leftsideText a {
+    color: white;
+}
+
+.leftsideText a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ================== RESPONSIVE ================== */
+
+/* ===== Laptop / Small Desktop ===== */
+@media (max-width: 1024px) {
+    .TrustPro {
+        padding: 20px 30px;
+    }
+
+    .textTurst h1 {
+        font-size: 28px;
+    }
+}
+
+/* ===== Tablet Large (820px) ===== */
+@media (max-width: 820px) {
+    .ContainerFirstPart {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .LeftSide {
+        align-items: center;
+    }
+
+    .textTurst h1 {
+        max-width: 100%;
+    }
+
+    .cartItemAboutUS {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* ===== Tablet Standard (768px – NO MOBILE) ===== */
+@media (max-width: 768px) {
+    .desc {
+        padding: 30px 0;
+    }
+
+    .textTurst h1 {
+        font-size: 24px;
+    }
+
+    .textTurst p {
+        font-size: 16px;
+    }
+
+    .textTurst button {
+        width: 100%;
+    }
+
+    .cartItemAboutUS {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

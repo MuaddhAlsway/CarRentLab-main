@@ -1,0 +1,107 @@
+/* ================= Service Card ================= */
+.cardItemServies {
+  background: transparent;
+  
+  border: #2c2c2c solid 1px;
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* ================= Services Title ================= */
+.cardItemServiesWrapper > div:first-child {
+  grid-column: 1 / -1;
+  text-align: left;
+  margin-bottom: 24px;
+
+}
+
+.cardItemServiesWrapper > div:first-child h2 {
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 600;
+  color: #1e1e1e;
+  margin-bottom: 10px;
+}
+
+.cardItemServiesWrapper > div:first-child p {
+  font-size: 16px;
+  color: #6b6b6b;
+  line-height: 1.6;
+}
+
+.cardItemServies:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.iconServiceCard {
+  font-size: 48px;
+  color: #2c2c2c;
+  margin-bottom: 16px;
+}
+
+.cardItemServies h3 {
+  font-size: 20px;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+}
+
+.cardItemServies p {
+  font-size: 15px;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+/* ================= Wrapper ================= */
+.cardItemServiesWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 80px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ================= Large Desktop <= 1440px ================= */
+@media (max-width: 1440px) {
+  .cardItemServiesWrapper {
+    padding: 70px 60px;
+  }
+}
+
+/* ================= Laptop <= 1280px ================= */
+@media (max-width: 1280px) {
+  .cardItemServiesWrapper {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 60px 50px;
+    gap: 20px;
+  }
+}
+
+/* ================= ≤1024px (Small laptops / iPad landscape) ================= */
+@media (max-width: 1024px) {
+  .cardItemServiesWrapper {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 60px 40px;
+  }
+}
+
+/* ================= ≤820px (Tablet portrait) ================= */
+@media (max-width: 820px) {
+  .cardItemServiesWrapper {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 40px 24px;
+  }
+}
+
+/* ================= ≤768px (Large phones) ================= */
+@media (max-width: 768px) {
+  .cardItemServiesWrapper {
+    padding: 32px 20px;
+  }
+
+  .cardItemServies {
+    padding: 24px 20px;
+  }
+}

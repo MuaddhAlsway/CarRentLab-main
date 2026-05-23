@@ -1,0 +1,164 @@
+/* ================= Page Container ================= */
+.pricingPage {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+/* ================= Title ================= */
+.pricingTitle {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #2c2c2c;
+}
+
+/* ================= Cards Wrapper ================= */
+.pricingCards {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+ 
+  justify-content: center;
+}
+
+/* ================= Single Card ================= */
+.pricingCard {
+  display: flex;
+  align-items: center;
+  background-color: #2c2c2c;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+  width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+/* ================= Card Image (left side) ================= */
+.cardImage {
+  width: 120px;
+  height: 120px;
+  background-color: #2c2c2c;
+  flex-shrink: 0;
+}
+
+/* You can customize each card color if you like */
+.pricingCard.basic {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), /* overlay أسود نصف شفاف */
+    url('../assets/Price1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pricingCard.premium {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.544)), /* overlay أسود نصف شفاف */
+    url('../assets/Pricing2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pricingCard.master {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), /* overlay أسود نصف شفاف */
+    url('../assets/Pricing3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* ================= Card Content (right side) ================= */
+.cardContent {
+  padding: 20px 24px;
+  text-align: left;
+}
+
+.cardContent h1 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #ddd;
+}
+
+.cardContent span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ddd;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.cardContent p {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 16px;
+}
+
+.cardContent button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cardContent button:hover {
+  background-color: #0056b3;
+}
+
+/* ================= Responsive ================= */
+
+/* Large Desktop <= 1440px */
+@media (max-width: 1440px) {
+  .pricingPage {
+    padding: 35px 40px;
+  }
+}
+
+/* Laptop <= 1280px */
+@media (max-width: 1280px) {
+  .pricingPage {
+    padding: 35px 30px;
+  }
+
+  .pricingCard {
+    width: 320px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pricingCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricingCard {
+    width: 90%;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricingCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cardContent {
+    text-align: center;
+  }
+}

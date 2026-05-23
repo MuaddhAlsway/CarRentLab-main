@@ -1,0 +1,187 @@
+.OurImpession {
+    padding: 80px 60px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-family: 'Saira', sans-serif;
+}
+
+.OurImpession h1 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: #222;
+    font-weight: 700;
+}
+
+/* Features Grid */
+.Features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Individual Feature Item */
+.featureItem {
+    background: linear-gradient(135deg, #2c2c2c, #2c2c2c);
+    color: #fff;
+    padding: 40px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.featureItem::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.featureItem:hover::before {
+    top: -20%;
+    left: -20%;
+}
+
+.featureItem:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #2c2c2c, #2c2c2c);
+}
+
+/* Icon Styling */
+.featureIcon {
+    font-size: 60px;
+    color: #fff;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.featureItem:hover .featureIcon {
+    transform: scale(1.2) rotate(10deg);
+    color: #4b4b4b; /* subtle gold on hover */
+}
+
+/* Feature Title */
+.featureItem h2 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Feature Description */
+.featureItem p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+
+/* Large Desktop <= 1440px */
+@media (max-width: 1440px) {
+    .OurImpession {
+        padding: 70px 50px;
+    }
+
+    .OurImpession h1 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Laptop <= 1280px */
+@media (max-width: 1280px) {
+    .OurImpession {
+        padding: 65px 45px;
+    }
+
+    .Features {
+        gap: 35px;
+    }
+
+    .featureIcon {
+        font-size: 55px;
+    }
+}
+
+/* Laptop / small screens <= 1024px */
+@media (max-width: 1024px){
+    .Features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .OurImpession {
+        padding: 60px 40px;
+    }
+
+    .OurImpession h1 {
+        font-size: 2.4rem;
+        margin-bottom: 50px;
+    }
+
+    .featureIcon {
+        font-size: 55px;
+    }
+}
+
+/* Tablets / mobile landscape <= 820px */
+@media (max-width: 820px){
+    .Features {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .OurImpession {
+        padding: 50px 30px;
+    }
+
+    .OurImpession h1 {
+        font-size: 2rem;
+        margin-bottom: 35px;
+    }
+
+    .featureIcon {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 480px){
+    .OurImpession {
+        padding: 40px 20px;
+    }
+
+    .OurImpession h1 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .Features {
+        gap: 20px;
+    }
+
+    .featureItem {
+        padding: 25px 15px;
+        border-radius: 12px;
+    }
+
+    .featureIcon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    .featureItem h2 {
+        font-size: 1.4rem;
+    }
+
+    .featureItem p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+}
