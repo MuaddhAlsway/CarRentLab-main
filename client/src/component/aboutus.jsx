@@ -1,50 +1,76 @@
-import carRent from '../assets/CarRentImage.jpg';
+import { useEffect, useState } from "react";
+import "./about.css";
 
-
-
-import custmer2 from '../assets/custmer2.jpg';
-import custmer3 from '../assets/custmer3.jpg';
-import TrustProffesional from './TrushProfessionals';
-import './about.css';
 const Aboutus = () => {
+  const [about, setAbout] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/about")
+      .then((res) => res.json())
+      .then((data) => setAbout(data))
+      .catch((err) => console.log("API Error:", err));
+  }, []);
+
+  if (!about) return <p>Loading...</p>;
+
   return (
-    <div className='aboutusContainer'>
-        <div className="desc">
-            <h1>About US</h1>
-            <p>Premium service with high standard rent car</p>
-        </div>
-        <div className="ContainerFirstPart">
+    <div className="aboutusContainer">
+
+      {/* HEADER */}
+      <div className="desc">
+        <h1>{about.title || "About Us"}</h1>
+        <p>{about.subtitle || ""}</p>
+      </div>
+
+      <div className="ContainerFirstPart">
+
+        {/* MAIN IMAGE */}
         <div className="imgside">
-            <img className="RentBig" src={carRent} alt="bigImage" />
-           
-        </div>
-        <div className="RightSide">
-            <div className="ourClient">
-                <img src={custmer2} alt="customer1" />
-                <img src={custmer2} alt="customer2" />
-                <img src={custmer3} alt="customer3" />
-                <div className="par">
-                     <p>Our Happy Customers</p>
-                </div>
-               
-            </div>
-            <div className="text">
-                <h4>ABOUT US</h4>
-                <h1>
-                    More than Just a Car Rental Service
-                </h1>
-                <p>
-                    At CarRentLab, we pride ourselves on being more than just a car rental service. We are your trusted partner in mobility, dedicated to providing exceptional vehicles and unparalleled customer service. Whether you're embarking on a business trip, a family vacation, or simply need a reliable ride for the day, we have the perfect vehicle to suit your needs.
-                </p>
-                <button>Learn More</button>
-            </div>
-        </div>
+          <img
+            className="RentBig"
+            src={
+              about.mainImage?.startsWith("http")
+                ? about.mainImage
+                : `http://localhost:5000${about.mainImage}`
+            }
+            alt="about"
+          />
         </div>
 
-    
-     
+        <div className="RightSide">
+
+          {/* CUSTOMERS */}
+          <div className="ourClient">
+            {about.customers?.map((c, i) => (
+              <img
+                key={i}
+                src={
+                  c.image?.startsWith("http")
+                    ? c.image
+                    : `http://localhost:5000${c.image}`
+                }
+                alt={`customer-${i}`}
+              />
+            ))}
+
+            <div className="par">
+              <p>{about.customerText || ""}</p>
+            </div>
+          </div>
+
+          {/* TEXT SECTION */}
+          <div className="text">
+            <h4>{about.sectionTag || ""}</h4>
+            <h1>{about.sectionTitle || ""}</h1>
+            <p>{about.sectionDescription || ""}</p>
+
+            <button>{about.buttonText || "Learn More"}</button>
+          </div>
+
+        </div>
+      </div>
     </div>
-  
-  )
-}
-export default Aboutus
+  );
+};
+
+export default Aboutus;
